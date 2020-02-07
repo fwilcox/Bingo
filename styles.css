@@ -5,3 +5,13 @@
 .winningBG {
 	background-image: url(images/redFlash.gif);
 }
+
+.table td {
+	vertical-align: middle;
+	hyphens: auto;
+}
+
+.table-bordered td,
+.table-bordered th {
+	border-color: #0a0a0a;
+} 
