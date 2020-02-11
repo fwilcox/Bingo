@@ -16,3 +16,7 @@
 .table-bordered th {
 	border-color: #0a0a0a;
 } 
+
+.btn {
+	border-radius: 0;
+}
