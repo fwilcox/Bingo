@@ -58,6 +58,7 @@ function initAll() {
 	if (document.getElementById) {
 		document.getElementById("reload").onClick = anotherCard;
 		newCard();
+		getTime();
 	}
 	else {
 		alert("Sorry, your browser doesn't support this script");
@@ -136,11 +137,36 @@ function checkWin() {
 		for (var i = 0; i < 24; i++) {
 			if (winners[winningOption] & Math.pow(2, i)) {
 				currSquare = "square" + i;
-				document.getElementById(currSquare).className = "winningBG";
+				/*document.getElementById(currSquare).className = "winningBG";*/
+				$(document).ready(function(){
+					$('#exampleModal').modal();
+				});
 			}
 		}
 	}
 }
+
+function getTime() {
+	var date = new Date();
+	var month = date.getMonth();
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var hours = date.getHours();
+	var minutes = date.getMinutes()
+		if (minutes < 10) {
+			minutes = '0' + minutes;
+		}
+
+	document.getElementById("date").innerHTML = '<span class="font-weight-bold">Card Played -</span> ' + month +
+	 '/' + day + '/' + year + ' ' + hours + ':' + minutes;
+}
+
+function showModel() {
+	var modal = document.getElementById('exampleModal');
+	modal.show();
+}
+
+
 
 
 
